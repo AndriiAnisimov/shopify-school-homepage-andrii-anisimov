@@ -1,0 +1,47 @@
+<div id="promo-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div
+        id="promo-modal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="promo-title"
+        aria-describedby="promo-subtitle"
+    >
+        <div class="modal-body">
+            <h1 class="promo-title">
+                Here’s $10 Off Your First Order!
+            </h1>
+            <h3 class="promo-subtitle">
+                Join our newsletter and get a $10 discount code sent straight to your inbox. New customers only.
+            </h3>
+
+            <form id="promo-form" novalidate>
+                <div class="form-group">
+                    <label for="promo-email">Email</label>
+                    <input
+                        type="email"
+                        id="promo-email"
+                        name="email"
+                        placeholder="Enter Email"
+                        required
+                        aria-describedby="promo-error"
+                    />
+                </div>
+                <div id="promo-error" role="alert" aria-live="assertive">
+                    Please enter a valid email.
+                </div>
+                <button type="submit" class="submit">Send</button>
+            </form>
+        </div>
+
+        <div class="modal-img">
+            <img src="/src/assets/images/modal.jpg" alt="Discount offer illustration" />
+        </div>
+
+        <button class="close-btn" id="promo-close" aria-label="Close modal">
+            <img src="/src/assets/images/icons/close.svg" alt="" />
+        </button>
+    </div>
+
+    <script type="module" src="/scripts/modal.js"></script>
+</div>

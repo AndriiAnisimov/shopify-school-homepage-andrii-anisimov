@@ -1,0 +1,120 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+.faq {
+  background: v.$color-bg-faq;
+  margin-top: 80px;
+
+  @media (max-width: 767px) {
+    margin-top: 60px;
+  }
+
+  &-title {
+    padding-top: 80px;
+
+    @media (max-width: 767px) {
+      @include m.typography(h2-mobile);
+      padding-top: 60px;
+    }
+  }
+
+  &-subtitle {
+    @include m.typography(body-text-large);
+    color: v.$color-gray-600;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  &-title-wrapper,
+  &-accordion-wrapper {
+    @media (max-width: 767px) {
+      width: calc(100% - 32px);
+      margin: 0 16px;
+    }
+  }
+
+  &-accordion-wrapper {
+    margin: 48px auto 0;
+    padding-bottom: 80px;
+    max-width: 872px;
+
+    @media (max-width: 767px) {
+      margin-top: 32px;
+      padding-bottom: 60px;
+    }
+
+    h3 {
+      margin: 8px 0 0;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:has(.accordion.active) + .panel {
+        border: 1px solid v.$color-gray-200;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        padding: 0 24px 24px;
+      }
+    }
+  }
+}
+
+.accordion {
+  @include m.typography(body-text-large);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: v.$color-white;
+  border: 1px solid v.$color-gray-200;
+  border-radius: 8px;
+  color: v.$color-black;
+  cursor: pointer;
+  padding: 24px;
+  outline: none;
+  text-align: left;
+  transition: 0.4s;
+  width: 100%;
+
+  &.active {
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+  }
+
+  &:after,
+  &.active:after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid v.$color-black;
+    border-radius: 50%;
+    color: v.$color-black;
+    width: 14px;
+    height: 14px;
+  }
+
+  &:after {
+    content: "\002B";
+  }
+
+  &.active:after {
+    content: "\2212";
+  }
+}
+
+.panel {
+  @include m.typography(body-text-large);
+  background: v.$color-white;
+  border: none;
+  border-radius: 0 0 8px 8px;
+  color: v.$color-gray-600;
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+
+  .accordion.active + & {
+    border: 1px solid v.$color-gray-200;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 0 24px 24px;
+  }
+}

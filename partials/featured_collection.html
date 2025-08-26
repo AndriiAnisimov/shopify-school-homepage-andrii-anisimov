@@ -1,0 +1,107 @@
+<section class="featured-collection-wrapper" aria-labelledby="featured-collection-title">
+    <h2 id="featured-collection-title">Featured Collection</h2>
+
+    <div class="swiper featured-collection">
+        <div class="swiper-wrapper" role="list">
+            <div class="swiper-slide" role="listitem">
+                <img src="/src/assets/images/featured_collection/nike_streakfly_2.jpg" alt="Nike Streakfly 2" />
+                <div class="product-info">
+                    <span class="product-name">Nike Streakfly 2</span>
+                    <span class="product-price">$300.00</span>
+                </div>
+            </div>
+
+            <div class="swiper-slide" role="listitem">
+                <img src="/src/assets/images/featured_collection/nike_pegasus_premium.jpg" alt="Nike Pegasus Premium" />
+                <div class="product-info">
+                    <span class="product-name">Nike Pegasus Premium</span>
+                    <span class="product-price">$350.00</span>
+                </div>
+            </div>
+
+            <div class="swiper-slide" role="listitem">
+                <img src="/src/assets/images/featured_collection/nike_pegasus_41.jpg" alt="Nike Pegasus 41" />
+                <div class="product-info">
+                    <span class="product-name">Nike Pegasus 41</span>
+                    <span class="product-price">$280.00</span>
+                </div>
+            </div>
+
+            <div class="swiper-slide" role="listitem">
+                <img src="/src/assets/images/featured_collection/nike_revolution_7.jpg" alt="Nike Revolution 7" />
+                <div class="product-info">
+                    <span class="product-name">Nike Revolution 7</span>
+                    <span class="product-price">$440.00</span>
+                </div>
+            </div>
+
+            <div class="swiper-slide" role="listitem">
+                <img src="/src/assets/images/featured_collection/nike_streakfly_2.jpg" alt="Nike Streakfly 2" />
+                <div class="product-info">
+                    <span class="product-name">Nike Streakfly 2</span>
+                    <span class="product-price">$300.00</span>
+                </div>
+            </div>
+
+            <div class="swiper-slide" role="listitem">
+                <img src="/src/assets/images/featured_collection/nike_pegasus_premium.jpg" alt="Nike Pegasus Premium" />
+                <div class="product-info">
+                    <span class="product-name">Nike Pegasus Premium</span>
+                    <span class="product-price">$350.00</span>
+                </div>
+            </div>
+
+            <div class="swiper-slide" role="listitem">
+                <img src="/src/assets/images/featured_collection/nike_pegasus_41.jpg" alt="Nike Pegasus 41" />
+                <div class="product-info">
+                    <span class="product-name">Nike Pegasus 41</span>
+                    <span class="product-price">$280.00</span>
+                </div>
+            </div>
+
+            <div class="swiper-slide" role="listitem">
+                <img src="/src/assets/images/featured_collection/nike_revolution_7.jpg" alt="Nike Revolution 7" />
+                <div class="product-info">
+                    <span class="product-name">Nike Revolution 7</span>
+                    <span class="product-price">$440.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-button-next custom-next" aria-label="Next product">
+            <img src="/src/assets/images/icons/arrow.svg" alt="" aria-hidden="true" />
+        </div>
+        <div class="swiper-button-prev custom-prev" aria-label="Previous product">
+            <img src="/src/assets/images/icons/arrow.svg" alt="" aria-hidden="true" />
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    let swiperFeaturedCollection = new Swiper(".featured-collection", {
+        spaceBetween: 30,
+        navigation: {
+            nextEl: ".custom-next",
+            prevEl: ".custom-prev",
+        },
+        keyboard: {
+            enabled: true,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.1,
+                spaceBetween: 16,
+            },
+            768: {
+                slidesPerView: 2.5,
+                spaceBetween: 24,
+            },
+            1280: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+        },
+    });
+</script>

@@ -1,0 +1,35 @@
+@use "sass:map";
+
+$typography: (
+  h1-desktop: (
+    size: 48px,
+    line-height: 48px
+  ),
+  h1-mobile: (
+    size: 30px,
+    line-height: 36px
+  ),
+  h2-desktop: (
+    size: 30px,
+    line-height: 36px
+  ),
+  h2-mobile: (
+    size: 24px,
+    line-height: 32px
+  ),
+  body-text-large: (
+    size: 16px,
+    line-height: 24px
+  ),
+  body-text-medium: (
+    size: 14px,
+    line-height: 20px
+  )
+);
+
+@mixin typography($token) {
+  $style: map.get($typography, $token);
+
+  font-size: map.get($style, size);
+  line-height: map.get($style, line-height);
+}

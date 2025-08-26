@@ -1,0 +1,83 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+body {
+  background: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.main-wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+h2 {
+  @include m.typography(h2-desktop);
+  color: v.$color-black;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+}
+
+label {
+  @include m.typography(body-text-large);
+  margin-bottom: 8px;
+  color: v.$color-black;
+}
+
+input,
+textarea {
+  @include m.typography(body-text-large);
+  border: 1px solid v.$color-gray-200;
+  border-radius: 8px;
+  padding: 16px;
+  color: v.$color-gray-600;
+
+  &::placeholder {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    @include m.typography(body-text-large);
+    color: v.$color-gray-600;
+  }
+
+  &:focus {
+    border-color: v.$color-gray-400;
+    box-shadow: 0 0 0 3px rgba(v.$color-gray-400, 0.2);
+    outline: none;
+  }
+}
+
+textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+button {
+  &.submit,
+  &.shop-collection,
+  &.add-to-bag {
+    @include m.typography(body-text-large);
+    background: v.$color-black;
+    border: none;
+    border-radius: 8px;
+    color: v.$color-white;
+    cursor: pointer;
+    height: 56px;
+
+    &:hover,
+    &:active {
+      background: v.$color-gray-600;
+    }
+  }
+}

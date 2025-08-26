@@ -1,0 +1,145 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 60px 24px;
+  width: calc(100% - 120px);
+
+  @media (max-width: 767px) {
+    margin: 60px 16px 24px;
+    width: calc(100% - 32px);
+  }
+
+  h2 {
+    @include m.typography(body-text-large);
+    margin: 0;
+  }
+
+  .footer-toggle {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: v.$color-black;
+
+    @include m.typography(body-text-large);
+
+    &::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-right: 1px solid v.$color-black;
+      border-bottom: 1px solid v.$color-black;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+
+    &[aria-expanded="true"]::after {
+      transform: rotate(-135deg);
+    }
+
+    &:focus {
+      outline: none;
+      outline-offset: 2px;
+    }
+  }
+
+  a {
+    @include m.typography(body-text-medium);
+    color: v.$color-gray-600;
+    text-decoration: none;
+
+    &:focus {
+      outline: 2px solid v.$color-black;
+      outline-offset: 2px;
+    }
+  }
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+
+      li + li {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  &-section-container {
+    display: flex;
+    flex-direction: column;
+    border: none;
+  }
+
+  &-bottom {
+    display: flex;
+    gap: 32px;
+    margin-top: 48px;
+
+    p {
+      @include m.typography(body-text-medium);
+      color: v.$color-gray-600;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    &-top {
+      flex-direction: column;
+    }
+
+    &-section-container {
+      border-bottom: 1px solid v.$color-gray-200;
+      padding: 12px 0;
+
+      &:first-child {
+        border-top: 1px solid v.$color-gray-200;
+      }
+
+      .footer-links {
+        margin-top: 8px;
+      }
+    }
+
+    &-bottom {
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    &-top {
+      flex-wrap: wrap;
+      gap: 24px;
+
+      .footer-toggle::after {
+        display: none;
+      }
+
+      .footer-links {
+        display: flex !important;
+        flex-direction: column;
+      }
+    }
+
+    &-bottom {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  }
+}

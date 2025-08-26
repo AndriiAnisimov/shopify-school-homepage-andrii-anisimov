@@ -1,0 +1,63 @@
+<section class="product_spotlight" aria-labelledby="product-title">
+    <div class="thumbnails">
+        <button class="thumbnail active" aria-pressed="true">
+            <img src="/src/assets/images/thumbnails/left.jpg" alt="View shoe from left angle" data-index="0" />
+        </button>
+        <button class="thumbnail" aria-pressed="false">
+            <img src="/src/assets/images/thumbnails/bottom.jpg" alt="View shoe from bottom angle" data-index="1" />
+        </button>
+        <button class="thumbnail" aria-pressed="false">
+            <img src="/src/assets/images/thumbnails/right.jpg" alt="View shoe from right angle" data-index="2" />
+        </button>
+        <button class="thumbnail" aria-pressed="false">
+            <img src="/src/assets/images/thumbnails/top.jpg" alt="View shoe from top angle" data-index="3" />
+        </button>
+        <button class="thumbnail" aria-pressed="false">
+            <img src="/src/assets/images/thumbnails/cross.jpg" alt="View shoe cross angle" data-index="4" />
+        </button>
+    </div>
+
+    <div class="main-image-wrapper">
+        <img src="/src/assets/images/colors/pink/left.jpg" class="main-image" id="mainImage"
+             alt="Pink Nike Air Max Plus, viewed from left angle" />
+        <div class="badge">
+            <img src="/src/assets/images/icons/star.svg" alt="" />
+            <span>Highly Rated</span>
+        </div>
+    </div>
+
+    <div class="product-info">
+        <h2 class="title" id="product-title">Nike Air Max Plus</h2>
+        <div class="price" id="price" aria-live="polite">$280</div>
+
+        <div class="colors" role="group" aria-label="Choose color">
+            <button class="color-thumb" aria-pressed="false" aria-label="Select color: White">
+                <img src="/src/assets/images/colors/white.jpg" alt="">
+            </button>
+            <button class="color-thumb" aria-pressed="false" aria-label="Select color: Black">
+                <img src="/src/assets/images/colors/black.jpg" alt="">
+            </button>
+            <button class="color-thumb active" aria-pressed="true" aria-label="Select color: Pink">
+                <img src="/src/assets/images/colors/pink.jpg" alt="">
+            </button>
+        </div>
+
+        <p class="select-size">Select Size:</p>
+        <div class="sizes" role="group" aria-label="Choose size">
+            <button class="size" aria-pressed="false">UK 5.5</button>
+            <button class="size active" aria-pressed="true">UK 6 (EU 39)</button>
+            <button class="size" aria-pressed="false">UK 6 (EU 40)</button>
+            <button class="size" aria-pressed="false">UK 6.5</button>
+            <button class="size" aria-pressed="false">UK 7</button>
+            <button class="size" aria-pressed="false">UK 7.5</button>
+        </div>
+
+        <button class="add-to-bag" aria-label="Add Nike Air Max Plus to bag">Add To Bag</button>
+
+        <p class="description">
+            Let your attitude have the edge in your Nike Air Max Plus, a Tuned Air experience that offers premium stability and unbelievable cushioning.
+        </p>
+    </div>
+
+    <script type="module" src="/scripts/product_spotlight.js"></script>
+</section>

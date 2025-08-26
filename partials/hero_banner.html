@@ -1,0 +1,50 @@
+<section class="hero-banner-wrapper" aria-label="Hero banner with featured sneakers">
+    <div class="swiper hero-banner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="/src/assets/images/hero.jpg" alt="Nike Air Max sneakers in motion" />
+            </div>
+
+            <div class="swiper-slide">
+                <img src="/src/assets/images/hero.jpg" alt="Adidas Originals on a city street" />
+            </div>
+
+            <div class="swiper-slide">
+                <img src="/src/assets/images/hero.jpg" alt="Puma running shoes on a track" />
+            </div>
+        </div>
+
+        <section class="hero-banner-container">
+            <h1 class="hero-banner-title">
+                More than just shoes - it's a part of your story.
+            </h1>
+            <h3 class="hero-banner-subtitle">
+                Original sneakers from Nike and other top brands that make every step feel special.
+            </h3>
+            <button class="shop-collection">Shop the collection</button>
+        </section>
+
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    let swiperHeroBanner = new Swiper(".hero-banner", {
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        a11y: {
+            enabled: true,
+            prevSlideMessage: "Previous slide",
+            nextSlideMessage: "Next slide",
+            slideLabelMessage: "Slide {{index}} of {{slidesLength}}",
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+        },
+    });
+</script>
